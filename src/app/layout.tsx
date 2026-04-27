@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
-import 'flag-icons/css/flag-icons.min.css';
 import './globals.css';
 import '../index.css';
 import '../App.css';
@@ -23,6 +22,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es" suppressHydrationWarning>
+      <head>
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.2.3/css/flag-icons.min.css"
+        />
+      </head>
       <body className={inter.className} suppressHydrationWarning>
         <StyleGuideHandler>
           <div className="App">
