@@ -1,0 +1,380 @@
+/* Destinations Page Styles */
+.destinations-page {
+  background: #FFFFFF;
+}
+
+/* Hero Section */
+.destinations-hero {
+  padding: 3rem 0 4rem;
+  background: linear-gradient(180deg, #F9FAFB 0%, #FFFFFF 100%);
+  text-align: center;
+}
+
+.destinations-hero h1 {
+  font-size: 2.75rem;
+  font-weight: 800;
+  color: #000000;
+  margin-bottom: 3rem;
+  line-height: 1.2;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.highlight-orange {
+  color: #F78700;
+}
+
+/* Search Bar Large */
+.search-bar-large {
+  max-width: 900px;
+  margin: 0 auto 2.5rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: #FFFFFF;
+  border: 2px solid #E5E7EB;
+  border-radius: 12px;
+  padding: 0.875rem 1.25rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+}
+
+.search-bar-large:focus-within {
+  border-color: #F78700;
+  box-shadow: 0 4px 16px rgba(247, 135, 0, 0.12);
+}
+
+.search-icon-pin {
+  font-size: 1.25rem;
+  margin-right: 0.75rem;
+  color: #374151;
+  flex-shrink: 0;
+}
+
+.search-bar-large input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  color: #000000;
+  background: transparent;
+}
+
+.search-bar-large input::placeholder {
+  color: #9CA3AF;
+}
+
+.btn-search-icon {
+  background: #F78700;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 8px;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+  margin-left: 0.75rem;
+}
+
+.btn-search-icon:hover {
+  background: #D67300;
+  transform: scale(1.05);
+}
+
+.btn-search-icon:active {
+  transform: scale(0.95);
+}
+
+.btn-search-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Filter Tabs */
+.filter-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.filter-tab {
+  background: #FFFFFF;
+  border: 2px solid #E5E7EB;
+  color: #374151;
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.filter-tab:hover {
+  border-color: #F78700;
+  color: #F78700;
+  background: #FFF7ED;
+}
+
+.filter-tab.active {
+  background: #000000;
+  border-color: #000000;
+  color: #FFFFFF;
+}
+
+.filter-tab.active:hover {
+  background: #1F2937;
+  border-color: #1F2937;
+  color: #FFFFFF;
+}
+
+/* Destinations Grid Section */
+.destinations-grid-section {
+  padding: 2rem 0 6rem;
+}
+
+.results-count {
+  text-align: center;
+  font-size: 1rem;
+  color: #6B7280;
+  margin-bottom: 2rem;
+  font-weight: 500;
+}
+
+/* Destinations Grid */
+.destinations-grid-page {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+/* Destination Card */
+.destination-card-page {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #FFFFFF;
+  border: 1px solid #E5E7EB;
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.destination-card-page:hover {
+  border-color: #F78700;
+  box-shadow: 0 4px 12px rgba(247, 135, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.destination-card-content {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex: 1;
+}
+
+.destination-flag {
+  flex-shrink: 0;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #F9FAFB;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+}
+
+.destination-flag .fi {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0;
+}
+
+.destination-flag .fi::before {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+}
+
+.destination-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.destination-type {
+  font-size: 0.75rem;
+  color: #6B7280;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.destination-name {
+  font-size: 1.0625rem;
+  font-weight: 700;
+  color: #000000;
+  margin: 0;
+}
+
+.destination-country {
+  font-size: 0.875rem;
+  color: #6B7280;
+}
+
+.destination-arrow {
+  background: #F9FAFB;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  color: #374151;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.destination-card-page:hover .destination-arrow {
+  background: #F78700;
+  color: #FFFFFF;
+  transform: translateX(4px);
+}
+
+/* No Results */
+.no-results {
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.no-results p {
+  font-size: 1.125rem;
+  color: #6B7280;
+  margin-bottom: 2rem;
+}
+
+.btn-clear-search {
+  background: #F78700;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 8px;
+  padding: 0.875rem 2rem;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-clear-search:hover {
+  background: #D67300;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(247, 135, 0, 0.3);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .destinations-grid-page {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .destinations-hero h1 {
+    font-size: 2.25rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .destinations-hero {
+    padding: 6rem 0 3rem;
+  }
+
+  .destinations-hero h1 {
+    font-size: 1.75rem;
+    margin-bottom: 2rem;
+  }
+
+  .search-bar-large {
+    padding: 0.75rem 1rem;
+  }
+
+  .search-icon-pin {
+    font-size: 1.125rem;
+    margin-right: 0.5rem;
+  }
+
+  .btn-search-icon {
+    width: 40px;
+    height: 40px;
+    margin-left: 0.5rem;
+  }
+
+  .btn-search-icon svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .filter-tabs {
+    gap: 0.5rem;
+  }
+
+  .filter-tab {
+    padding: 0.625rem 1rem;
+    font-size: 0.875rem;
+  }
+
+  .destinations-grid-page {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .destination-card-page {
+    padding: 1.25rem;
+  }
+
+  .destination-flag {
+    font-size: 2rem;
+    width: 45px;
+    height: 45px;
+  }
+
+  .destination-name {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .destinations-hero h1 {
+    font-size: 1.5rem;
+  }
+
+  .filter-tabs {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .filter-tab {
+    text-align: center;
+  }
+}

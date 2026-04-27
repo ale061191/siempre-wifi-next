@@ -1,0 +1,118 @@
+/* Overlay y layout */
+.sim-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(17, 24, 39, 0.6); /* gris oscuro con transparencia */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 1000;
+}
+
+.sim-modal-content {
+  position: relative;
+  width: 100%;
+  max-width: 720px;
+  background: var(--color-white, #FFFFFF);
+  border-radius: 12px;
+  border: 1px solid var(--color-gray-200, #E5E7EB);
+  box-shadow: var(--shadow-xl, 0 20px 25px -5px rgba(0,0,0,.1));
+  padding: 24px 24px 16px;
+  max-height: 85vh;            /* permite scroll interno con mouse */
+  overflow: auto;              /* activa scroll del contenido */
+  -webkit-overflow-scrolling: touch; /* inercia en iOS */
+  overscroll-behavior: contain;     /* evita que el scroll "salte" al body */
+  z-index: 2;                  /* por encima del backdrop clickeable */
+}
+
+/* Botón cerrar */
+.sim-modal-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  border: 1px solid var(--color-gray-200, #E5E7EB);
+  background: var(--color-white, #FFFFFF);
+  color: var(--color-gray-700, #374151);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition, all .2s ease);
+}
+.sim-modal-close:hover { background: var(--color-gray-50, #F9FAFB); }
+
+/* Encabezado */
+.sim-modal-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+  padding-right: 36px; /* espacio para el botón X */
+}
+.sim-modal-icon { font-size: 24px; }
+.sim-modal-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--color-black, #000);
+}
+
+/* Cuerpo */
+.sim-modal-body { color: var(--color-gray-700, #374151); }
+.sim-modal-description {
+  margin-bottom: 12px;
+  color: var(--color-gray-600, #4B5563);
+}
+.sim-modal-section { margin-top: 16px; }
+.sim-section-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-black, #000);
+  margin-bottom: 8px;
+}
+.sim-modal-list {
+  list-style: disc inside;
+  display: grid;
+  gap: 6px;
+}
+.sim-modal-steps {
+  list-style: decimal inside;
+  display: grid;
+  gap: 6px;
+}
+
+/* Footer */
+.sim-modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 16px;
+}
+.btn-modal-close {
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid var(--color-gray-300, #D1D5DB);
+  background: var(--color-white, #FFF);
+  color: var(--color-gray-800, #1F2937);
+  cursor: pointer;
+  transition: var(--transition, all .2s ease);
+}
+.btn-modal-close:hover { background: var(--color-gray-50, #F9FAFB); }
+
+/* Botón invisible para click en backdrop (para compatibilidad con teclado/lectores) */
+.sim-modal-backdrop-click {
+  position: fixed;
+  inset: 0;
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  z-index: 1; /* por debajo del contenido para no bloquear el scroll */
+}
+
+@media (max-width: 480px) {
+  .sim-modal-content { padding: 20px 16px 12px; }
+}

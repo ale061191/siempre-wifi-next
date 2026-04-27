@@ -1,0 +1,148 @@
+/* ===== BENEFITS SECTION ===== */
+.benefits {
+  padding: 80px 0;
+  background: #F9FAFB;
+  border-top: none;
+}
+
+.benefits .section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.benefits .section-header h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #000000;
+}
+
+.benefits .section-header p {
+  font-size: 1rem;
+  color: #6B7280;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.benefit-card {
+  padding: 2.5rem 2rem;
+  border-radius: 12px;
+  background: #FFFFFF;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid #E5E7EB;
+  opacity: 0;
+  transform: translateY(20px);
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.benefit-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  border-color: #F78700;
+}
+
+/* Círculo con icono SVG - similar a HowItWorks */
+.benefit-icon-circle {
+  width: 70px;
+  height: 70px;
+  background: #FFFFFF;
+  border: 2px solid #F78700;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  color: #F78700;
+  transition: all 0.3s ease;
+}
+
+.benefit-icon-circle svg {
+  width: 32px;
+  height: 32px;
+  stroke: #F78700;
+  stroke-width: 2px;
+}
+
+.benefit-card:hover .benefit-icon-circle {
+  background: #F78700;
+  transform: scale(1.05);
+}
+
+.benefit-card:hover .benefit-icon-circle svg {
+  stroke: #FFFFFF;
+}
+
+.benefit-card:hover .benefit-icon-circle {
+  color: white;
+}
+
+.benefit-card h3 {
+  font-size: 1.125rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: #000000;
+  line-height: 1.4;
+}
+
+.benefit-card p {
+  font-size: 0.9375rem;
+  color: #6B7280;
+  line-height: 1.6;
+}
+
+/* CTA como enlace de texto (no botón) */
+.benefit-cta-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-top: 0.5rem;
+  font-weight: 600;
+  color: #F78700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.benefit-cta-link:hover {
+  color: #cf6d00; /* tono más oscuro al hover */
+}
+
+/* Estandarización de íconos en Benefits */
+.benefit-icon-circle svg * {
+  stroke: currentColor;
+  fill: none;
+}
+
+.benefit-icon-circle svg [fill]:not([fill="none"]) {
+  fill: currentColor;
+}
+
+@media (max-width: 1024px) {
+  .benefits-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .benefits-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section-header h2 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-header h2 {
+    font-size: 1.75rem;
+  }
+}

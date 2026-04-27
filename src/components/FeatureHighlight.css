@@ -1,0 +1,127 @@
+/* ===== FEATURE HIGHLIGHT ===== */
+.feature-highlight {
+  padding: 80px 0;
+  background: linear-gradient(135deg, #FFFFFF 0%, #F9FAFB 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.feature-highlight::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: -10%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(247, 135, 0, 0.08) 0%, transparent 70%);
+  border-radius: 50%;
+  transform: translateY(-50%);
+}
+
+.feature-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.feature-text h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  color: #000000;
+}
+
+.feature-description {
+  font-size: 1.125rem;
+  color: #4B5563;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.feature-list {
+  list-style: none;
+  margin-bottom: 2rem;
+}
+
+.feature-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 0.75rem 0;
+  font-size: 1rem;
+  color: #374151;
+}
+
+.feature-check {
+  color: #F78700;
+  font-weight: 700;
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+
+.feature-image {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.feature-main-image {
+  width: 100%;
+  max-width: 450px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 24px;
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.25);
+  animation: fadeInScale 1s ease-out;
+  transition: transform 0.3s ease;
+}
+
+.feature-main-image:hover {
+  transform: scale(1.02);
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 768px) {
+  .feature-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .feature-text h2 {
+    font-size: 2rem;
+  }
+
+  .feature-main-image {
+    max-width: 380px;
+  }
+}
+
+@media (max-width: 480px) {
+  .feature-text h2 {
+    font-size: 1.75rem;
+  }
+
+  .feature-description {
+    font-size: 1rem;
+  }
+
+  .feature-main-image {
+    max-width: 100%;
+    border-radius: 16px;
+  }
+}

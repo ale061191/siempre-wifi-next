@@ -1,0 +1,222 @@
+/* Globe Feature Section */
+.globe-feature-section {
+  width: 100%;
+  margin: 6rem 0 0;
+  padding: 0;
+}
+
+.globe-feature-container {
+  width: 100%;
+  margin: 0;
+  background: linear-gradient(135deg, #000000 0%, #1F2937 100%);
+  border: none;
+  border-radius: 0;
+  padding: 5rem 3rem;
+  box-shadow: none;
+  overflow: hidden;
+  position: relative;
+}
+
+.globe-feature-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4rem;
+}
+
+/* Text Content */
+.globe-feature-text {
+  flex: 1;
+  max-width: 600px;
+  z-index: 10;
+}
+
+.globe-feature-title {
+  font-size: 2.75rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+}
+
+.globe-feature-highlight {
+  color: #FFFFFF;
+  font-weight: 800;
+}
+
+.globe-feature-wifi {
+  color: #F78700;
+  font-weight: 800;
+}
+
+.globe-feature-description {
+  font-size: 1.125rem;
+  color: #D1D5DB;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+/* CTA Button - Animated Style (Same as StyleGuide) */
+.globe-feature-cta {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 44px;
+  padding: 0 2rem;
+  background: #F78700;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  overflow: hidden;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+}
+
+.globe-feature-cta:hover {
+  background: #D67300;
+}
+
+.globe-feature-cta:active {
+  transform: scale(0.95);
+}
+
+.globe-feature-cta .btn-text {
+  margin-right: 2rem;
+  transition: opacity 0.5s ease;
+  z-index: 1;
+}
+
+.globe-feature-cta:hover .btn-text {
+  opacity: 0;
+}
+
+.globe-feature-cta .btn-icon-wrapper {
+  position: absolute;
+  right: 0.25rem;
+  top: 0.25rem;
+  bottom: 0.25rem;
+  width: 25%;
+  display: grid;
+  place-items: center;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 6px;
+  z-index: 10;
+  transition: all 0.5s ease;
+}
+
+.globe-feature-cta:hover .btn-icon-wrapper {
+  width: calc(100% - 0.5rem);
+}
+
+.globe-feature-cta:active .btn-icon-wrapper {
+  transform: scale(0.95);
+}
+
+.globe-feature-cta .btn-chevron {
+  color: #FFFFFF;
+  transition: transform 0.3s ease;
+}
+
+.globe-feature-cta:hover .btn-chevron {
+  transform: translateX(2px);
+}
+
+/* Globe Visual */
+.globe-feature-visual {
+  flex: 1;
+  position: relative;
+  height: 400px;
+  max-width: 600px;
+}
+
+.globe-container {
+  position: absolute;
+  right: -100px;
+  bottom: -80px;
+  width: 600px;
+  height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.globe-canvas {
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.globe-canvas.globe-loaded {
+  opacity: 1;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .globe-feature-content {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .globe-feature-text {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .globe-feature-title {
+    font-size: 2rem;
+  }
+
+  .globe-feature-description {
+    font-size: 1rem;
+  }
+
+  .globe-feature-visual {
+    height: 300px;
+    width: 100%;
+  }
+
+  .globe-container {
+    position: relative;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .globe-feature-section {
+    margin: 3rem auto 2rem;
+  }
+
+  .globe-feature-container {
+    padding: 2rem 1.5rem;
+    border-radius: 16px;
+  }
+
+  .globe-feature-title {
+    font-size: 1.75rem;
+  }
+
+  .globe-feature-description {
+    font-size: 0.9375rem;
+  }
+
+  .globe-feature-visual {
+    height: 250px;
+  }
+
+  .globe-container {
+    max-width: 300px;
+  }
+}

@@ -1,0 +1,129 @@
+/* ===== About Page ===== */
+.about-page {
+  background: #FFFFFF;
+  color: #111827;
+}
+
+/* Hero */
+.about-hero {
+  position: relative;
+  height: 360px;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+}
+.about-hero-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.about-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.35) 40%, rgba(0,0,0,0.2) 100%);
+}
+.about-hero-content {
+  position: relative;
+  z-index: 1;
+  padding-bottom: 2rem;
+}
+.about-hero-title {
+  color: #FFFFFF;
+  font-size: 2.5rem;
+  font-weight: 800;
+}
+
+/* Intro */
+.about-intro {
+  padding: 2.5rem 0 2rem;
+  background: #FFFFFF;
+}
+.intro-container {
+  text-align: center;
+}
+.about-intro-text {
+  max-width: 700px;
+  margin: 0 auto 1rem;
+  color: #111827;
+}
+/* Botón primario global reutilizado (.btn-primary) */
+
+/* Misión / Visión */
+.about-mission-vision {
+  padding: 2.5rem 0;
+  background: #FFFFFF;
+}
+.mv-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.mv-card {
+  background: #FFFFFF;
+  border: 1px solid #E5E7EB;
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+.mv-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #000000;
+  margin-bottom: 0.5rem;
+}
+.mv-text { color: #6B7280; font-size: 0.9375rem; }
+
+/* Valores */
+.about-values {
+  padding: 80px 0;
+  background: #FFFFFF;
+}
+
+/* CTA oscuro */
+.about-cta-dark {
+  background: #F78700; /* naranja de la guía */
+  color: #FFFFFF;
+  padding: 3rem 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.about-cta-dark::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255, 157, 31, 0.2) 0%, rgba(214, 115, 0, 0.2) 100%);
+  pointer-events: none;
+}
+.cta-dark-title {
+  color: #FFFFFF;
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+/* Ajustes para los botones dentro del CTA naranja reutilizando estilos globales */
+.about-cta-dark .cta-buttons { display: flex; justify-content: center; }
+.about-cta-dark .btn-secondary {
+  border-color: #FFFFFF;
+  color: #FFFFFF;
+}
+.about-cta-dark .btn-secondary:hover {
+  background: #FFFFFF;
+  color: #F78700;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+}
+@media (max-width: 768px) {
+  .about-hero { height: 300px; }
+  .about-hero-title { font-size: 2rem; }
+  .mv-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 480px) {
+  .values-row { grid-template-columns: 1fr; }
+}
