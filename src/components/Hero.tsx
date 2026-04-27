@@ -6,20 +6,45 @@ import { getCountryCode } from '../utils/countryFlags';
 import { MONTH_NAMES_ES } from '../utils/dates';
 import { PRICE_PER_DAY_USD } from '../utils/pricing';
 
-const POPULAR_DESTINATIONS = [
-  'Estados Unidos',
-  'España',
-  'Francia',
-  'Italia',
-  'México',
-  'Reino Unido',
-  'Japón',
-  'Alemania',
-  'Canadá',
-  'Australia',
-  'Brasil',
-  'Argentina'
+const regionalPlans = [
+  'África', 'América Central', 'América Latina', 'Asia', 'Balcanes', 'Caribe',
+  'Escandinavia', 'Europa', 'Global', 'Medio Oriente', 'Oceanía'
 ];
+
+const countries = [
+  'Albania', 'Alemania', 'Andorra', 'Arabia Saudita', 'Argelia', 'Argentina', 'Armenia',
+  'Aruba', 'Australia', 'Austria', 'Azerbaiyán', 'Bahamas', 'Bahréin', 'Bangladesh',
+  'Barbados', 'Bélgica', 'Belice', 'Benín', 'Bermudas', 'Bielorrusia', 'Bolivia',
+  'Bosnia y Herzegovina', 'Botsuana', 'Brasil', 'Brunei', 'Bulgaria', 'Burkina Faso',
+  'Camboya', 'Camerún', 'Canadá', 'Catar', 'Chad', 'Chile', 'China', 'Chipre', 'Colombia',
+  'Corea del Sur', 'Costa de Marfil', 'Costa Rica', 'Croacia', 'Curazao', 'Dinamarca',
+  'Dominica', 'Ecuador', 'Egipto', 'El Salvador', 'Emiratos Árabes', 'Eslovaquia',
+  'Eslovenia', 'España', 'Estados Unidos', 'Estonia', 'Fiji', 'Filipinas', 'Finlandia',
+  'Francia', 'Gabón', 'Georgia', 'Ghana', 'Gibraltar', 'Granada', 'Grecia', 'Guadalupe',
+  'Guam', 'Guatemala', 'Guyana', 'Haití', 'Honduras', 'Hong Kong', 'Hungría', 'India',
+  'Indonesia', 'Irán', 'Irlanda', 'Islandia', 'Israel', 'Italia', 'Jamaica', 'Japón',
+  'Jordania', 'Kazajistán', 'Kenia', 'Kuwait', 'Laos', 'Letonia', 'Líbano', 'Liechtenstein',
+  'Lituania', 'Luxemburgo', 'Macao', 'Madagascar', 'Malasia', 'Maldivas', 'Malta',
+  'Marruecos', 'Martinica', 'Mauricio', 'México', 'Mónaco', 'Mongolia', 'Montenegro',
+  'Mozambique', 'Myanmar', 'Nepal', 'Nicaragua', 'Noruega', 'Nueva Zelanda', 'Omán',
+  'Países Bajos', 'Pakistán', 'Panamá', 'Perú', 'Polonia', 'Portugal', 'Puerto Rico',
+  'Reino Unido', 'República Checa', 'República Dominicana', 'Rumania', 'Rusia', 'Senegal',
+  'Serbia', 'Seychelles', 'Singapur', 'Sri Lanka', 'Sudáfrica', 'Suecia', 'Suiza',
+  'Tailandia', 'Taiwán', 'Tanzania', 'Trinidad y Tobago', 'Túnez', 'Turquía', 'Ucrania',
+  'Uganda', 'Uruguay', 'Vietnam'
+];
+
+const cities = [
+  'Abu Dabi', 'Ámsterdam', 'Antalya', 'Atenas', 'Bali', 'Bangkok', 'Barcelona', 'Berlín',
+  'Bombay', 'Boston', 'Budapest', 'Cancún', 'Chicago', 'Dubái', 'Dublín', 'El Cairo',
+  'Estambul', 'Florida', 'Hawaii', 'Honolulu', 'Ibiza', 'Las Vegas', 'Lisboa', 'Londres',
+  'Los Ángeles', 'Madrid', 'Mallorca', 'Manila', 'Marrakech', 'Melbourne', 'Miami',
+  'Milán', 'Montreal', 'Moscú', 'Nueva York', 'Osaka', 'París', 'Pekín', 'Phuket',
+  'Praga', 'Punta Cana', 'Roma', 'San Francisco', 'Seattle', 'Seúl', 'Shanghái',
+  'Sídney', 'Tenerife', 'Tokio', 'Toronto', 'Vancouver', 'Viena', 'Washington D.C.', 'Yakarta'
+];
+
+const allDestinations = [...regionalPlans, ...countries, ...cities];
 
 function Hero() {
   const router = useRouter();
@@ -75,7 +100,7 @@ function Hero() {
       setFilteredDestinations([]);
       setShowSuggestions(false);
     } else {
-      const filtered = POPULAR_DESTINATIONS.filter(dest =>
+      const filtered = allDestinations.filter(dest =>
         dest.toLowerCase().includes(query.toLowerCase())
       ).slice(0, 8);
       setFilteredDestinations(filtered);

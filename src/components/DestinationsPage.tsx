@@ -255,33 +255,16 @@ function DestinationsPage() {
   ];
 
   const getFilteredDestinations = () => {
-    // Si hay búsqueda, buscar en TODOS los destinos sin importar el filtro activo
+    // Si hay bǧsqueda, buscar en TODOS los destinos sin importar el filtro activo
     if (searchQuery) {
       const query = searchQuery.toLowerCase();
       const results = allDestinations.filter(dest => 
         dest.name.toLowerCase().includes(query)
       );
-      
-      // Auto-cambiar el filtro según los resultados encontrados
-      if (results.length > 0) {
-        const firstResult = results[0];
-        
-        // Determinar a qué categoría pertenece el primer resultado
-        if (popularDestinations.some(d => d.name === firstResult.name)) {
-          if (activeFilter !== 'popular') setActiveFilter('popular');
-        } else if (regionalPlans.some(d => d.name === firstResult.name)) {
-          if (activeFilter !== 'regional') setActiveFilter('regional');
-        } else if (countries.some(d => d.name === firstResult.name)) {
-          if (activeFilter !== 'countries') setActiveFilter('countries');
-        } else if (cities.some(d => d.name === firstResult.name)) {
-          if (activeFilter !== 'cities') setActiveFilter('cities');
-        }
-      }
-      
       return results;
     }
     
-    // Si no hay búsqueda, mostrar según el filtro activo
+    // Si no hay bǧsqueda, mostrar segǧn el filtro activo
     let destinations = [];
     
     switch(activeFilter) {

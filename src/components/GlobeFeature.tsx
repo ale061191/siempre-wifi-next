@@ -103,6 +103,8 @@ function Globe() {
       return points;
     }
 
+    let animationFrameId: number;
+
     function drawGlobe() {
       if (!ctx || !canvas) return;
 
@@ -208,12 +210,16 @@ function Globe() {
       });
 
       rotation += 0.002;
-      requestAnimationFrame(drawGlobe);
+      animationFrameId = requestAnimationFrame(drawGlobe);
     }
 
     drawGlobe();
-    setTimeout(() => setIsLoaded(true), 100);
+    const timeoutId = setTimeout(() => setIsLoaded(true), 100);
 
+    return () => {
+      cancelAnimationFrame(animationFrameId);
+      clearTimeout(timeoutId);
+    };
   }, []);
 
   return (
